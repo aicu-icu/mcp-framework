@@ -102,12 +102,7 @@ export abstract class MCPTool<TInput extends Record<string, any> = {}>
   }
 
   private getJsonSchemaType(zodType: z.ZodType<any>): string {
-    if (zodType instanceof z.ZodString) return "string";
-    if (zodType instanceof z.ZodNumber) return "number";
-    if (zodType instanceof z.ZodBoolean) return "boolean";
-    if (zodType instanceof z.ZodArray) return "array";
-    if (zodType instanceof z.ZodObject) return "object";
-    return "string";
+    return zodType['_def']['typeName'].replace('Zod', '').toLowerCase() || 'string';
   }
 
   protected createSuccessResponse(data: unknown): ToolResponse {
