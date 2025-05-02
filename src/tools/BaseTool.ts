@@ -102,6 +102,7 @@ export abstract class MCPTool<TInput extends Record<string, any> = {}>
   }
 
   private getJsonSchemaType(zodType: z.ZodType<any>): string {
+    // @ts-ignore
     return zodType['_def']['typeName'].replace('Zod', '').toLowerCase() || 'string';
   }
 
