@@ -1,5 +1,5 @@
 {
-  "name": "mcp-framework",
+  "name": "@aicu/mcp-framework",
   "version": "0.2.11",
   "description": "Framework for building Model Context Protocol (MCP) servers in Typescript",
   "type": "module",
