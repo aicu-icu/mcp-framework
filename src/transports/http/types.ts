@@ -68,6 +68,7 @@ export interface HttpStreamTransportConfig {
    * Port to listen on. Default: 8080
    */
   port?: number;
+  host?: string;
   
   /**
    * HTTP endpoint path. Default: "/mcp"
@@ -165,6 +166,7 @@ export type HttpStreamTransportConfigInternal = Required<Omit<HttpStreamTranspor
  */
 export const DEFAULT_HTTP_STREAM_CONFIG: HttpStreamTransportConfigInternal = {
   port: 8080,
+  host: '127.0.0.1',
   endpoint: "/mcp",
   maxMessageSize: "4mb",
   responseMode: "batch",

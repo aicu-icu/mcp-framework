@@ -153,7 +153,7 @@ export class HttpStreamTransport extends AbstractTransport {
         this.cleanupAllConnections();
         this._onclose?.();
       });
-      this._server.listen(this._config.port, () => {
+      this._server.listen(this._config.port, this._config.host, () => {
         const address = this._server?.address();
         if (address) {
             logger.info(`HttpStream transport listening on port ${this._config.port}, endpoint ${this._config.endpoint}`);
