@@ -52,7 +52,8 @@ export class ToolLoader {
       tool &&
         typeof tool.name === "string" &&
         tool.toolDefinition &&
-        typeof tool.toolCall === "function"
+        typeof tool.toolCall === "function" &&
+        (typeof tool.enabled === 'function' && tool.enabled())
     );
 
     if (isValid) {

@@ -1,6 +1,6 @@
 {
   "name": "@aicu/mcp-framework",
-  "version": "0.5.4",
+  "version": "0.5.8",
   "description": "Framework for building Model Context Protocol (MCP) servers in Typescript",
   "type": "module",
   "author": "Alex Andru <alex@andru.codes>",
@@ -25,7 +25,8 @@
     "watch": "tsc --watch",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "format": "prettier --write \"src/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\"",
+    "publish": "npm publish --registry https://registry.npmjs.com"
   },
   "engines": {
     "node": ">=18.19.0"
