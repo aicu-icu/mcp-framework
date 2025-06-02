@@ -63,7 +63,7 @@ export class MCPServer {
   private toolsMap: Map<string, ToolProtocol> = new Map();
   private promptsMap: Map<string, PromptProtocol> = new Map();
   private resourcesMap: Map<string, ResourceProtocol> = new Map();
-  private toolLoader: ToolLoader;
+  public toolLoader: ToolLoader;
   private promptLoader: PromptLoader;
   private resourceLoader: ResourceLoader;
   private serverName: string;

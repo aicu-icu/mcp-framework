@@ -43,6 +43,7 @@ export interface SSETransportConfig {
    * Port to listen on
    */
   port?: number;
+  host?: string;
 
   /**
    * Endpoint for SSE events stream
@@ -103,6 +104,7 @@ export const DEFAULT_CORS_CONFIG: CORSConfig = {
  */
 export const DEFAULT_SSE_CONFIG: SSETransportConfigInternal = {
   port: 8080,
+  host: '127.0.0.1',
   endpoint: "/sse",
   messageEndpoint: "/messages",
   maxMessageSize: "4mb"

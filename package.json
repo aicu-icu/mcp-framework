@@ -1,6 +1,6 @@
 {
-  "name": "mcp-framework",
-  "version": "0.2.13",
+  "name": "@aicu/mcp-framework",
+  "version": "0.6.3",
   "description": "Framework for building Model Context Protocol (MCP) servers in Typescript",
   "type": "module",
   "author": "Alex Andru <alex@andru.codes>",
@@ -9,7 +9,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
   "files": [
@@ -25,7 +26,7 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "format": "prettier --write \"src/**/*.ts\"",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
     "dev:pub": "rm -rf dist && npm run build && yalc publish --push"
   },
   "engines": {

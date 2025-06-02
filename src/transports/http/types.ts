@@ -20,6 +20,7 @@ export interface HttpStreamTransportConfig {
    * Port to run the HTTP server on, defaults to 8080
    */
   port?: number;
+  host?: string;
 
   /**
    * Endpoint path for MCP communication, defaults to "/mcp"
@@ -74,6 +75,7 @@ export interface HttpStreamTransportConfig {
 
 export const DEFAULT_HTTP_STREAM_CONFIG: HttpStreamTransportConfig = {
   port: 8080,
+  host: '127.0.0.1',
   endpoint: '/mcp',
   responseMode: 'stream',
   batchTimeout: 30000,

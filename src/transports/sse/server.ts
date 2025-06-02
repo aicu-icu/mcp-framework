@@ -82,7 +82,7 @@ export class SSEServerTransport extends AbstractTransport {
         }
       })
 
-      this._server.listen(this._config.port, () => {
+      this._server.listen(this._config.port, this._config.host, () => {
         logger.info(`SSE transport listening on port ${this._config.port}`)
         resolve()
       })

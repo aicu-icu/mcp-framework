@@ -11,6 +11,7 @@ export class HttpStreamTransport extends AbstractTransport {
   private _sdkTransport: StreamableHTTPServerTransport;
   private _isRunning = false;
   private _port: number;
+  private _host: string;
   private _server?: HttpServer;
   private _endpoint: string;
   private _enableJsonResponse: boolean = false;
@@ -25,6 +26,7 @@ export class HttpStreamTransport extends AbstractTransport {
     super();
 
     this._port = config.port || 8080;
+    this._host = config.host || '127.0.0.1';
     this._endpoint = config.endpoint || '/mcp';
     this._enableJsonResponse = config.responseMode === 'batch';
 
@@ -174,7 +176,7 @@ export class HttpStreamTransport extends AbstractTransport {
         this._onclose?.();
       });
 
-      this._server.listen(this._port, () => {
+      this._server.listen(this._port, this._host, () => {
         logger.info(`HTTP server listening on port ${this._port}, endpoint ${this._endpoint}`);
 
         this._sdkTransport

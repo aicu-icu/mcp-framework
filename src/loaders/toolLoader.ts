@@ -54,6 +54,7 @@ export class ToolLoader {
         tool.toolDefinition &&
         typeof tool.toolCall === "function"
     );
+    if (typeof tool.enabled === 'function' && !tool.enabled()) return false;
 
     if (isValid) {
       logger.debug(`Validated tool: ${tool.name}`);
